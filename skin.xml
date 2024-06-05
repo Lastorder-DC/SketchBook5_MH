@@ -594,6 +594,9 @@
 				<options value="Y">
 					<title>표시</title>
 				</options>
+				<options value="N">
+					<title>비표시</title>
+				</options>
 			</var>
 			<var name="no_img" type="image">
 				<title>대체 이미지</title>

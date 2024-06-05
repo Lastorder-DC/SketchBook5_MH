@@ -94,7 +94,7 @@
 					<a cond="!$comment->member_srl && $comment->homepage" href="{$comment->getHomepageUrl()}" target="_blank">{$comment->getNickName()}</a>
 					<b cond="!$comment->member_srl && !$comment->homepage">{$comment->getNickName()}</b>
 					<span class="date">{getTimeGap($comment->get('regdate'), "Y.m.d H:i")}</span>
-					<small cond="$grant->manager || $mi->display_ip_address" class="m_no"><!--@if($grant->is_admin)--><a href="https://ko.infobyip.com/ip-{$comment->getIpaddress()}.html" target="_blank" style="font-size:10px; font-weight:300">({$comment->getIpaddress()})</a><!--@else-->({$comment->getIpaddress()})<!--@end--></small>
+					<small cond="$grant->manager && $mi->display_ip_address == 'Y'" class="m_no"><!--@if($grant->is_admin)--><a href="https://ko.infobyip.com/ip-{$comment->getIpaddress()}.html" target="_blank" style="font-size:10px; font-weight:300">({$comment->getIpaddress()})</a><!--@else-->({$comment->getIpaddress()})<!--@end--></small>
 					<span cond="$comment->isSecret()" class="ico_secret">SECRET</span>
 
 					<!--// 댓글 작성자가 원글 작성자인 경우 표시-->
