@@ -78,7 +78,7 @@ jQuery(function($){
 			<include cond="!$mi->breadcrumb" target="_breadcrumb.html" />
 			<!--// 폰트 버튼 -->
 			<div cond="$mi->font_btn!='N'" class="bd_font m_no fr" style="display:none"|cond="$oDocument->isExists() || $mi->font_btn=='2'">
-			<load target="js/font_ng.js" type="body" />
+				<load target="js/font_ng.js" type="body" />
 				<a class="select tg_btn2" href="#" data-href=".bd_font_select"><b>T</b><strong><!--@if($mi->font=='ng')-->나눔고딕<!--@elseif($mi->font=='window_font')-->{$lang->window_font}<!--@elseif($mi->font=='tahoma')-->{$lang->tahoma}<!--@else-->{$lang->best_font}<!--@end--></strong><span class="arrow down"></span></a>
 				<div class="bd_font_select tg_cnt2"><button type="button" class="tg_blur2"></button>
 					<ul>
