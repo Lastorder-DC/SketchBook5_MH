@@ -10,12 +10,14 @@
 			</div>
 			<!--// 제목 -->
 			<h3>
-				<include target="title.html" />
-				<!--@if((int)($document->getRegdate('YmdHis')>date("YmdHis", time()-$mi->duration_new*60*60)))-->
-				<i class="mrk new">NEW</i>
-				<!--@elseif((int)(zdate($document->get('last_update'),'YmdHis')>date("YmdHis", time()-$mi->duration_new*60*60)))-->
-				<i class="mrk update">UP</i>
-				<!--@end-->
+				<a href="{getUrl('document_srl',$document->document_srl,'listStyle',$listStyle, 'cpage','')}">
+					<include target="title.html" />
+					<!--@if((int)($document->getRegdate('YmdHis')>date("YmdHis", time()-$mi->duration_new*60*60)))-->
+					<i class="mrk new">NEW</i>
+					<!--@elseif((int)(zdate($document->get('last_update'),'YmdHis')>date("YmdHis", time()-$mi->duration_new*60*60)))-->
+					<i class="mrk update">UP</i>
+					<!--@end-->
+				</a>
 			</h3>
 			<!--// 글 정보 -->
 			<div class="info">

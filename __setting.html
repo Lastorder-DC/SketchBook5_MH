@@ -1,5 +1,7 @@
 {@
 	$mi = $module_info;
+	if(\Rhymix\Framework\UA::getColorScheme()=='dark') $mi->colorset='black';
+	else $mi->colorset='white';
 	if(!$mi->content_cut_size) $mi->content_cut_size = 240;
 	if(!$mi->duration_new) $mi->duration_new = 24;
 	if(!$mi->colorset) $mi->colorset = 'white';
@@ -62,8 +64,8 @@
 	if($mi->custom_shadow) $mi->shadow = $mi->custom_shadow;
 	if(!$mi->color) $mi->color = 333333;
 	if(!$mi->color) $mi->shadow = '#999';
-	if($mi->colorset=='black') $mi->color = EEEEEE;
-	if($mi->colorset=='black') $mi->shadow = '#000';
+	// if($mi->colorset=='black') $mi->color = EEEEEE;
+	// if($mi->colorset=='black') $mi->shadow = '#000';
 	if($mi->color=='87cefa') $mi->shadow = '#5f9ea0';<!--// 라이트스카이블루 -->
 	if($mi->color=='6495ed') $mi->shadow = '#4682b4';<!--// 콘플라워블루 -->
 	if($mi->color=='4169e1' || $mi->color=='4682b4') $mi->shadow = '#646496';<!--// 로얄블루, 스틸블루(비표준) -->
@@ -239,7 +241,7 @@
 <load cond="$mi->fontawesome==''" target="https://use.fontawesome.com/releases/v6.5.1/css/all.css" />
 <load cond="$mi->sexy_button==''" target="css/button.css" />
 <load target="css/board.css" />
-<load cond="$mi->colorset=='black'" target="css/black.css" />
+<load cond="\Rhymix\Framework\UA::getColorScheme()==='dark'" id="dark_board_css" target="css/black.css" />
 
 <!--// 커스텀 파일 넣기 -->
 <include cond="file_exists(_XE_PATH_.'modules/board/skins/sketchbook5_MH/custom/custom.php')" target="custom/custom.php" />
@@ -265,9 +267,9 @@
 	.bd .shadow{text-shadow:1px 1px 1px {$mi->shadow};}
 	.bd .bolder{color:#{$mi->color};text-shadow:2px 2px 4px {$mi->shadow};}
 	.bd .bg_color{background-color:#{$mi->color};}
-	<block cond="$mi->colorset=='white'">
-	.bd .bg_f_color{background-color:#{$mi->color};background:-webkit-linear-gradient(#FFF -50%,#{$mi->color} 50%);background:linear-gradient(to bottom,#FFF -50%,#{$mi->color} 50%);}
-	</block>
+	<!--//block cond"$mi->colorset=='white'"-->
+	.color_scheme_light .bd .bg_f_color{background-color:#{$mi->color};background:-webkit-linear-gradient(#FFF -50%,#{$mi->color} 50%);background:linear-gradient(to bottom,#FFF -50%,#{$mi->color} 50%);}
+	<!--//block-->
 	.bd .border_color{border-color:#{$mi->color};}
 	.bd .bx_shadow{box-shadow:0 0 2px {$mi->shadow};}
 	.viewer_with.on:before{background-color:#{$mi->color};box-shadow:0 0 2px #{$mi->color};}
@@ -314,13 +316,13 @@
 	</block>
 	.bd_zine .tmb_wrp .no_img{width:{$mi->zine_thumb_width}px;height:{$mi->zine_thumb_height}px;line-height:{$mi->zine_thumb_height}px}
 
-	<!--@if(!$mi->dark_mode=='Y')-->
-	.bd_zine>li>a{display:block;position:absolute;top:-1px;bottom:-1px;left:-1px;right:-1px;border:2px solid transparent;background-image:url(../img/blank.gif);text-decoration:none}
-	.bd_zine a:hover,.bd_zine a:focus,.bd_zine .select a{border-color:#{$mi->color}; border-radius:5px}
-	<!--@else-->
-	.bd_zine li,.bd_zine li{border:2px solid transparent; }
-	.bd_zine li:hover,.bd_zine li:focus, .bd_zine .select {border:2px solid #{$mi->color}; border-radius:5px }
-	<!--@end-->
+	<!--//if!$mi->dark_mode=='Y'-->
+	.color_scheme_light .bd_zine>li>a{display:block;position:absolute;top:-1px;bottom:-1px;left:-1px;right:-1px;border:2px solid transparent;background-image:url(../img/blank.gif);text-decoration:none}
+	.color_scheme_light .bd_zine a:hover,.bd_zine a:focus,.bd_zine .select a{border-color:#{$mi->color}; border-radius:5px}
+	<!--//else-->
+	.color_scheme_dark .bd_zine li,.bd_zine li{border:2px solid transparent; }
+	.color_scheme_dark .bd_zine li:hover,.bd_zine li:focus, .bd_zine .select {border:2px solid #{$mi->color}; border-radius:5px }
+	<!--//end-->
 
 	.bd_zine.zine .tmb_wrp img,.bd_zine.card li{ {$mi->zine_css} }
 	<block cond="$list_config['thumbnail']">

@@ -672,7 +672,7 @@
 .bd_tb_lst .speech{min-width:240px;padding:6px}
 .bd_tb_lst .wrp img{display:block;margin:0 auto;padding:7px}
 .bd_tb_lst .only_img .speech{display:none}
-.bd_tb_lst .cate span,.bd_tb_lst .author span,.bd_tb_lst .last_post small{display:block;overflow:hidden;max-width:90px;text-overflow:ellipsis;word-wrap:normal\9}
+.bd_tb_lst .cate span,.bd_tb_lst .author span,.bd_tb_lst .last_post small{display:block;overflow:hidden;max-width:130px;text-overflow:ellipsis;word-wrap:normal\9}
 .bd_tb_lst .author img{max-width:none}
 .bd_tb_lst .last_post{line-height:12px}
 .bd_tb_lst .extraimages{margin-left:2px;white-space:nowrap}

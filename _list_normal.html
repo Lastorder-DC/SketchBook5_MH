@@ -19,7 +19,7 @@
 						<th scope="col" cond="!$mi->show_cate && $mi->use_category=='Y'" class="m_no"><span>{$lang->category}</span></th>
 						<th scope="col" class="title <!--@if($mi->sticky_select == 't')-->t_fixed<!--@end-->"><span><a href="{getUrl('sort_index','title','order_type',$order_type)}"><!--@if(!$mi->link_board)-->{$lang->title}<!--@else-->{$lang->link_site}<!--@end--><i cond="$sort_index=='title'" class="arrow {$order_icon}"></i></a></span></th>
 					</block>
-					<th scope="col" cond="$val->type=='nick_name' && $val->idx==-1"><span>{$lang->writer}</span></th>
+					<th scope="col" class="author" cond="$val->type=='nick_name' && $val->idx==-1"><span>{$lang->writer}</span></th>
 					<th scope="col" cond="$val->type=='user_id' && $val->idx==-1"><span>{$lang->user_id}</span></th>
 					<th scope="col" cond="$val->type=='user_name' && $val->idx==-1"><span>{$lang->user_name}</span></th>
 					<th scope="col" cond="$val->type=='regdate' && $val->idx==-1"><span><a href="{getUrl('sort_index','regdate','order_type',$order_type)}">{$lang->date}<i cond="$sort_index=='regdate'" class="arrow {$order_icon}"></i></a></span></th>
@@ -38,7 +38,7 @@
 			<tr cond="$notice_list && !$mi->notice_style" class="notice" loop="$notice_list=>$no,$document">
 				<block loop="$list_config=>$key,$val">
 					<td cond="$val->type=='no' && $val->idx==-1" class="no">
-						<block cond="$document_srl==$document->document_srl">&raquo;</block><strong cond="$document_srl!=$document->document_srl" class="sbtn_mini sbtn-orange">{$lang->notice}</strong>
+						<block cond="$document_srl==$document->document_srl">&raquo;</block><strong cond="$document_srl!=$document->document_srl" class="sbtn_mini sbtn-orange"><!--@if($document->get('hot_document'))-->인기<!--@else-->{$lang->notice}<!--@end--></strong>
 					</td>
 					<block cond="$val->type=='title' && $val->idx==-1">
 						<td cond="$timeline_info && $mi->timeline_bview==''"><a href="{getUrl('module_srl', $document->get('module_srl'))}"><strong>{htmlspecialchars($modules_info[$document->get('module_srl')]->browser_title)}</strong></a></td>

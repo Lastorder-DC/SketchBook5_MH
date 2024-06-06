@@ -12,6 +12,7 @@
 }
 
 <load target="./css/spoiler.css" />
+<load target="./ext/youtube_duration.js" index="1" />
 <script src="./js/spoiler.js"></script>
 
 <load target="//developers.kakao.com/sdk/js/kakao.min.js" />
@@ -439,9 +440,13 @@
 					</a>
 				<!--@end-->
 
-				<a cond="$mi->declare" class="blamed declare bd_login" href="#" onclick="doCallModuleAction('document','procDocumentDeclare','{$oDocument->document_srl}');return false;"|cond="$is_logged">
+				<a cond="$mi->declare" class="blamed declare bd_login" href="{getUrl('','mid',$mid,'act','dispDocumentDeclare','target_srl',$oDocument->document_srl)}"|cond="$is_logged" href="#"|cond="!$is_logged" onclick="popopen(this.href, 'popup'); return false;"|cond="$is_logged" onclick="alert('비회원은 신고할 수 없습니다.');return false;"|cond="!$is_logged">
 					<b><i class="fa fa-phone"></i></b>
 					<span>{$lang->cmd_declare}</span>
+				</a>
+				<a cond="$update_view" style="border:2px solid #{$mi->color};color:#{$mi->color};" target="_blank" href="{getUrl('','mid',$mid,'act','dispBoardUpdateLog','document_srl',$oDocument->document_srl)}">
+					<b><i class="fa fa-clock-rotate-left"></i></b>
+					<span>부검</span>
 				</a>
 			</div>
 			<!--// SNS -->
