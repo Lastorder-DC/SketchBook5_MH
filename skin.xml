@@ -333,6 +333,15 @@
 					<title>표시</title>
 				</options>
 			</var>
+			<var name="hide_header" type="radio">
+				<title>상단 헤더 숨기기</title>
+				<options value="">
+					<title>표시(기본)</title>
+				</options>
+				<options value="hide">
+					<title>숨김</title>
+				</options>
+			</var>
 			<var name="breadcrumb" type="radio" default="N">
 				<title>좌측 상단 빵조각 메뉴</title>
 				<options value="">

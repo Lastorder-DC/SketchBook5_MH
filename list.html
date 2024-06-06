@@ -74,7 +74,7 @@ jQuery(function($){
 		</block>
 
 		<!--// 헤더 -->
-		<div class="bd_hd<!--@if($oDocument->isExists())--> v2<!--@end--> clear">
+		<div cond="$mi->hide_header != 'hide'" class="bd_hd<!--@if($oDocument->isExists())--> v2<!--@end--> clear">
 			<include cond="!$mi->breadcrumb" target="_breadcrumb.html" />
 			<!--// 폰트 버튼 -->
 			<div cond="$mi->font_btn!='N'" class="bd_font m_no fr" style="display:none"|cond="$oDocument->isExists() || $mi->font_btn=='2'">
