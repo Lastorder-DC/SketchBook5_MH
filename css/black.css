@@ -140,7 +140,7 @@ FFF : 191919
 .tmb_wrp .loading{background:#000 url(../img/black/loading.gif) no-repeat 50% 50%}
 .bd.fdb_count .replyNum,.bd.fdb_count .trackbackNum{background:#444 !important}
 .bd_tb_lst td,.bd_zine li,.bd_zine.zine .info span{border-color:#222 !important}
-.bd_tb_lst .notice td,.bd_zine li.notice{background:#3f3f3f; border-color:#333 !important}
+.bd_tb_lst .notice tr,.bd_zine li.notice{background:#3f3f3f; border-color:#333 !important}
 .bd_tb_lst .select,.bd_tb_lst tbody tr:hover{background:#383838; border-color:#333 !important}
 
 .bd_tb_lst th{border-color:#3C3C3C;color:#EEE;box-shadow:inset 0 -1px 0 #191919}
