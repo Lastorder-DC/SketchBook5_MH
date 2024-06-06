@@ -223,3 +223,7 @@ FFF : 191919
 .bd_prev_next{border-top-color:#333}
 .bd_hd.v2 .bd_bc{border-color:#333;background:#111}
 }
+
+.bd_whole {
+    background-color: #333; 
+}

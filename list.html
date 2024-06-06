@@ -25,7 +25,7 @@ jQuery(function($){
 <include cond="$mi->default_style=='viewer' && $grant->view" target="_viewer.html" />
 <block cond="$mi->default_style!='viewer'">
 	<load target="js/jquery.masonry.min.js" type="body" />
-	<div style="background-color:{$mi->content_color}; <!--@if($mi->content_radius == '')-->-webkit-border-radius:10px;-moz-border-radius:10px; border-radius:10px;<!--@end-->">
+	<div class="bd_whole" style="<!--@if($mi->content_radius == '')-->-webkit-border-radius:10px;-moz-border-radius:10px; border-radius:10px;<!--@end-->">
 
 		<!--// 게시판상단에 메뉴 / 분류 / 글작성버턴 -->
 		<div cond="!$mi->top_loca ==''">
