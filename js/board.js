@@ -376,7 +376,7 @@ if(bd.find('div.rd').length){
 		$(window).scroll(function(){
 			var sT = $(this).scrollTop();
 			var o = bd.find('div.rd_nav_side .rd_nav');
-			if((sT > bd.find('div.rd_body').offset().top) && (sT < bd.find('hr.rd_end').offset().top-$(this).height())){
+			if(sT > bd.find('div.rd_body').offset().top){
 				o.fadeIn(200);
 			} else {
 				o.fadeOut(200);

@@ -343,8 +343,8 @@
 .rd_nav .help strong{display:inline-block;width:28px;margin-right:6px;background:#EEE;border:1px solid #DDD;border-radius:4px;text-align:center}
 .rd_nav .tg_btn2{padding:6px 1px 6px 5px;font-size:10px;color:#888}
 .rd_nav .tg_btn2 .arrow{border-top-color:#888}
-.rd_nav_side{position:absolute;z-index:100;right:0}
-.rd_nav_side .rd_nav{display:none;position:fixed;top:auto !important;bottom:150px;width:28px;margin:0}
+.rd_nav_side{position:absolute;z-index:100;right:30px}
+.rd_nav_side .rd_nav{display:none;position:fixed;top:auto !important;bottom:10px;width:28px;margin:0}
 .rd_nav_side .edit,.rd_nav_side .files,.rd_nav_side .action,.rd_nav_side .tg_btn2,.rd_nav_side .rd_nav b{display:none}
 .rd_nav b{display:none}
 .rd_nav_tx{line-height:16px;letter-spacing:-1px}
