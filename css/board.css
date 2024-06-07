@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* Reset */
 .bd,.bd input,.bd textarea,.bd select,.bd button,.bd table{font-size:12px;line-height:1.5}
+.bd textarea{font-size:15px}
 .bd{color:#444; padding:0 5px; }
 .bd em{font-style:normal}
 .bd a{text-decoration:none;color:#333;transition:border-color .4s,box-shadow .4s,background .4s,color .4s,opacity .4s}
