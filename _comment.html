@@ -172,7 +172,7 @@
 				<!--// 편집 등 -->
 				<div class="fdb_nav img_tx">
 					<block cond="$mi->cmt_this_btn=='2' && $is_logged">
-					<a href="{getUrl('','mid',$mid,'act','dispCommentDeclare','target_srl',$comment->comment_srl)}"|cond="$is_logged" href="#"|cond="!$is_logged" onclick="popopen(this.href, 'popup'); return false;"|cond="$is_logged" onclick="alert('비회원은 신고할 수 없습니다.');return false;"|cond="!$is_logged"><i class="fa fa-phone"></i>{$lang->cmd_declare}</a>
+					<!-- // <a href="{getUrl('','mid',$mid,'act','dispCommentDeclare','target_srl',$comment->comment_srl)}"|cond="$is_logged" href="#"|cond="!$is_logged" onclick="popopen(this.href, 'popup'); return false;"|cond="$is_logged" onclick="alert('비회원은 신고할 수 없습니다.');return false;"|cond="!$is_logged"><i class="fa fa-phone"></i>{$lang->cmd_declare}</a> -->
 					<a href="#" onclick="doCallModuleAction('comment','procCommentVoteUp','{$comment->comment_srl}');return false"><i class="fa fa-heart color"></i>{$lang->cmd_vote}</a>
 					<a cond="!$mi->cmt_vote_down" href="#" onclick="doCallModuleAction('comment','procCommentVoteDown','{$comment->comment_srl}');return false"><i class="fa fa-heart"></i>{$lang->cmd_vote_down}</a>
 					</block>
