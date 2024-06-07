@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* Reset */
 .bd,.bd input,.bd textarea,.bd select,.bd button,.bd table{font-size:12px;line-height:1.5}
-.bd textarea{font-size:15px}
+.bd textarea{font-size:14px}
 .bd{color:#444; padding:0 5px; }
 .bd em{font-style:normal}
 .bd a{text-decoration:none;color:#333;transition:border-color .4s,box-shadow .4s,background .4s,color .4s,opacity .4s}
@@ -661,12 +661,12 @@
 
 /* Normal */
 .bd_tb_lst{margin-top:25px}
-.bd_tb_lst th,.bd_tb_lst td{padding:8px 12px;font-size:15px;text-align:center;white-space:nowrap}
+.bd_tb_lst th,.bd_tb_lst td{padding:8px 12px;font-size:14px;text-align:center;white-space:nowrap}
 .bd_tb_lst th{padding:9px 12px;border-top:1px solid #CCC;border-bottom:1px solid #BBB;box-shadow:inset 0 -1px 0 #FFF;color:#555}
 .bd_tb_lst td,.bd_tb_lst .hx:visited{color:#555}
 .bd_tb_lst .cate{padding:8px;color:#666}
 .bd_tb_lst .title{padding-right:6px;width:100%}
-.bd_tb_lst td.title{text-align:left;font-size:15px;white-space:normal;word-break:break-all}
+.bd_tb_lst td.title{text-align:left;font-size:14px;white-space:normal;word-break:break-all}
 .bd_lst td.title a{color:#222}
 .bd_tb_lst .wrp{left:0;margin-left:0 !important;white-space:normal}
 .bd_tb_lst .bubble_edge{left:20%}
