@@ -110,7 +110,7 @@ FFF : 191919
 .bd_prev_next small{color:#777}
 .rd_tag div{background:#000;border-color:#666 !important}
 
-.fdb_lst_wrp.fdb_v2,.fdb_v2 .fdb_lst,fdb_lst .bd_pg,.fdb_itm,.fdb_itm.re,#re_cmt{border-color:#333}
+.fdb_lst_wrp.fdb_v2,.fdb_v2 .fdb_lst,fdb_lst .bd_pg,.fdb_itm,.fdb_itm.re,#re_cmt{border-color:#111}
 .fdb_lst_wrp.fdb_v2{background:#292929}
 .fdb_v2 .fdb_lst,.bd .nametag{background:#191919}
 .cmt_editor,.fdb_tag{border-color:#333;background:#131313}
