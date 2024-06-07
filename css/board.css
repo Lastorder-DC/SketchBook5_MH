@@ -601,8 +601,8 @@
 
 /* List Style */
 .bd_lst{clear:both;margin:0;padding:0;list-style:none;*zoom:1}
-.bd_tb_lst td,.bd_zine li{border-bottom:1px solid #EEE}
-.bd_tb_lst .notice tr,.bd_zine li.notice,.bd_tb_lst .select,.bd_tb_lst tbody tr:hover{background:#F9F9F9;border-color:#DDD}
+.bd_tb_lst tr,.bd_zine li{border-bottom:1px solid #EEE}
+.bd_tb_lst tr.notice,.bd_zine li.notice,.bd_tb_lst .select,.bd_tb_lst tbody tr:hover{background:#F9F9F9;border-color:#DDD}
 .bd_tb_lst.common_notice{margin-top:0;padding:0 2px}
 .bd_lst input[type=checkbox]{position:relative;z-index:10}
 .bd_lst img,.bd_lst input{vertical-align:middle}
