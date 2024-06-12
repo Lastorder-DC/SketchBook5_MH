@@ -1268,3 +1268,5 @@ a.downimg:focus { background:url(../img/down02.png) no-repeat 0 0px; }
 
 /* MP4 동영상에 프로그레스바 기능 추가 */
 .trackBar { background-color:#c00000c2; height:10px; width:0; position:relative; margin:-6px 2px 0px 0px; }
+
+.fa.liked { color: #f5cfcf; }
