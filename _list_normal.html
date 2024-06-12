@@ -3,6 +3,9 @@
 	<!--@else-->
 	{@ $order_icon="up"; $order_type="desc"; }
 <!--@end-->
+{@
+	$voteData = Rhymix\Modules\Yeokbox\Models\Vote::getVoteList();
+}
 <p cond="!$document_list && !$notice_list" class="no_doc">{$lang->no_documents}</p>
 <div style="overflow-x: auto;">
 	<table cond="$document_list || $notice_list" class="bd_lst bd_tb_lst bd_tb">
@@ -117,8 +120,8 @@
 									</span>
 								</a>
 							<!--@end-->
-							<!-- {$document->get('voted_heart')} -->
-							<i class="fa fa-heart liked" cond="$document->get('voted_heart') == 'Y'"></i>
+							<!-- voteData {$voteData[$document->document_srl]} -->
+							<i class="fa fa-heart liked" cond="$voteData[$document->document_srl] == 'Y'"></i>
 							<!--// 조회수별 이미지출력 -->
 							<!--@if($mi->Icons_Count!='' && ($document->get('readed_count') > $mi->readed_count_hot))-->
 								<!--@if($mi->hot_image)--><img src="{$mi->hot_image}" alt="" title="hot" />
