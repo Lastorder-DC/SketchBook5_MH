@@ -5,6 +5,7 @@
 <!--@end-->
 {@
 	$voteData = Rhymix\Modules\Yeokbox\Models\Vote::getVoteList();
+	debugPrint($voteData);
 }
 <p cond="!$document_list && !$notice_list" class="no_doc">{$lang->no_documents}</p>
 <div style="overflow-x: auto;">
