@@ -55,7 +55,7 @@
 								<a cond="$document->getCommentCount()" href="{getUrl('document_srl', $document->document_srl)}#{$document->document_srl}_comment" class="replyNum" title="{$lang->comment}">{$document->getCommentCount()}</a>
 								<a cond="$document->getTrackbackCount()" href="{getUrl('document_srl', $document->document_srl)}#{$document->document_srl}_trackback" class="trackbackNum" title="{$lang->trackback}">{$document->getTrackbackCount()}</a>
 							</block>
-							<span class="extraimages">{$document->printExtraImages(60*60*$mi->duration_new)}</span>
+							<span class="extraimages"><i class="fa fa-heart" cond="$document->get('voted_heart')"></i>{$document->printExtraImages(60*60*$mi->duration_new)}</span>
 						</td>
 					</block>
 					<td class="author" cond="$val->type=='nick_name' && $val->idx==-1"><span><a href="#popup_menu_area" class="member_{$document->get('member_srl')}" onclick="return false">{$document->getNickName()}</a></span></td>
