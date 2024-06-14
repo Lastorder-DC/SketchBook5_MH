@@ -9,6 +9,18 @@
 	$description=$oDocument->getSummary(100);
 	if(!$mi->copy) $mi->copy = 'copy';
 	if(!$mi->e_urlt) $mi->e_urlt = 'Link';
+
+	if($oDocument->isSecret() && !$oDocument->isGranted()):
+		$seo_title = config('seo.document_title') ?: '$SITE_TITLE - $DOCUMENT_TITLE';
+		$seo_title = Context::replaceUserLang($seo_title);
+		Context::setBrowserTitle($seo_title, array(
+			'site_title' => Context::getSiteTitle(),
+			'site_subtitle' => Context::getSiteSubtitle(),
+			'subpage_title' => $this->module_info->browser_title,
+			'document_title' => '비밀글입니다',
+			'page' => Context::get('page') ?: 1,
+		));
+	endif;
 }
 
 <load target="./css/spoiler.css" />
