@@ -55,23 +55,31 @@
 				</div>
 				<h1 class="np_18px">
 					<a href="{$oDocument->getPermanentUrl()}" style="font-size:1.2em; font-weight:bold">
-						<!--@if($mi->extra_title =='')-->
-							<!--@if($oDocument->getTitle() !== '.')-->
-								{$oDocument->getTitle()}
-							<!--@else-->
-								{$mi->title_default_text}&nbsp;
-							<!--@end-->
+						<!--@if($document->isSecret() && !$document->isGranted())-->
+							비밀글입니다.
 						<!--@else-->
-							<!--@if($oDocument->getExtraEidValueHTML($mi->title_name))-->
-								{$oDocument->getExtraEidValueHTML($mi->title_name)}
+							<!--// 확장변수 제목 대처 -->
+							<!--@if($mi->extra_title == '')-->
+								<!--@if($document->getTitle() !== '.')-->
+									{$document->getTitle()}
+								<!--@else-->
+									{$mi->title_default_text}&nbsp;
+								<!--@end-->
 							<!--@else-->
-								{$mi->title_default_text}&nbsp;
+								<!--@if($document->getExtraEidValueHTML($mi->title_name))-->
+									{$document->getExtraEidValueHTML($mi->title_name)}
+								<!--@else-->
+									{$mi->title_default_text}&nbsp;
+								<!--@end-->
 							<!--@end-->
 						<!--@end-->
 					</a>
 				</h1>
 			</div>
 			<div class="btm_area clear">
+				<!--@if($document->isSecret() && !$document->isGranted())-->
+				<div class="side">작성자 비공개</div>
+				<!--@else-->
 				<img cond="$mi->rd_profile=='Y' && $oDocument->getProfileImage()" class="img fl" src="{$oDocument->getProfileImage()}" alt="profile" title="{$oDocument->getNickName()}" />
 				<div class="side">
 					<a cond="!$mi->rd_nick" href="#popup_menu_area" class="nick member_{$oDocument->get('member_srl')}" onclick="return false">{$oDocument->getNickName()}</a>
@@ -84,6 +92,7 @@
 					<span cond="!$mi->rd_cmt">{$lang->comment} <b>{$oDocument->getCommentcount()}</b></span>
 					</block>
 				</div>
+				<!--@end-->
 				<div class="side fr">
 					<small cond="$grant->manager && $mi->display_ip_address == 'Y'" class="m_no"><!--@if($grant->is_admin)--><a href="https://ko.infobyip.com/ip-{$oDocument->getIpaddress()}.html" target="_blank">({$oDocument->getIpaddress()})</a><!--@else-->({$oDocument->getIpaddress()})<!--@end--> </small>
 					<a cond="$mi->rd_link=='3'" class="link m_no" href="{$oDocument->getPermanentUrl()}">{$oDocument->getPermanentUrl()}</a>

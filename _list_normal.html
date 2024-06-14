@@ -167,7 +167,15 @@
 							</div>
 						</td>
 					</block>
-					<td class="author" cond="$val->type=='nick_name' && $val->idx==-1"><span><a href="#popup_menu_area" class="member_{$document->get('member_srl')}" onclick="return false">{$document->getNickName()}</a></span></td>
+					<td class="author" cond="$val->type=='nick_name' && $val->idx==-1">
+						<span>
+							<!--@if($document->isSecret() && !$document->isGranted())-->
+							비공개
+							<!--@else-->
+							<a href="#popup_menu_area" class="member_{$document->get('member_srl')}" onclick="return false">{$document->getNickName()}</a>
+							<!--@end-->
+						</span>
+					</td>
 					<td class="author" cond="$val->type=='user_id' && $val->idx==-1"><span>{$document->getUserID()}</span></td>
 					<td class="author" cond="$val->type=='user_name' && $val->idx==-1"><span>{$document->getUserName()}</span></td>
 					<td class="time" cond="$val->type=='regdate' && $val->idx==-1" title="{getTimeGap($document->get('regdate'), "H:i")}">{$document->getRegdate('Y.m.d')}</td>
