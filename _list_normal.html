@@ -87,7 +87,7 @@
 					</td>
 					<block cond="$val->type=='title' && $val->idx==-1">
 						<td cond="$timeline_info && $mi->timeline_bview==''"><a href="{getUrl('module_srl', $document->get('module_srl'))}">{htmlspecialchars($modules_info[$document->get('module_srl')]->browser_title)}</a></td>
-						<td cond="!$timeline_info && $module_info->include_modules && $mi->timeline_bview==''"><a href="{$document->get('mid')}"><strong>{$document->get('module_title')}</strong></a></td>
+						<td cond="!$timeline_info && $module_info->include_modules && ($mi->timeline_bview=='' || $document->get('mid') == 'archive')"><a href="{$document->get('mid')}"><strong>{$document->get('module_title')}</strong></a></td>
 						<td cond="!$mi->show_cate && $mi->use_category=='Y'" onclick="showUpdateExtraModal(this, {$document->document_srl}, {$document->get('category_srl')}, 'category')"|cond="$document->isGranted() && $use_category_update" class="cate"><span style="color:{$category_list[$document->get('category_srl')]->color}"|cond="$category_list[$document->get('category_srl')]->color!='transparent'">{$category_list[$document->get('category_srl')]->title}</span></td>
 						<td class="title <!--@if($mi->sticky_select == 't')-->t_fixed<!--@end-->" style="min-width:{$mi->subject_w_size}px;">
 							<!--@if($grant->view)-->
