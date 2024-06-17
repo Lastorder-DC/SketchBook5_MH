@@ -5,7 +5,7 @@
 .bd{color:#444; padding:0 5px; }
 .bd em{font-style:normal}
 .bd a{text-decoration:none;color:#333;transition:border-color .4s,box-shadow .4s,background .4s,color .4s,opacity .4s}
-.bd a:hover{text-decoration:underline;color:#000}
+.bd a:hover{text-decoration:none; color:#000}
 .bd fieldset{margin:0;padding:0;border:0}
 .bd label,.bd button{cursor:pointer}
 .fl{float:left}
@@ -290,7 +290,7 @@
 .rd_hd .board .btm_area span{letter-spacing:-1px}
 .rd_hd .board b{padding-left:2px;color:#666}
 .rd_hd .board .link{padding:0 8px;font-size:10px;color:#999}
-.rd_hd .board .nick{padding:0 8px;font-size:11px}
+.rd_hd .board .nick{padding:0 8px;font-size:11px; color: var(--color-gray-900)}
 .rd_hd .board .date{font-weight:400;letter-spacing:0 !important}
 .rd_hd .xe_v3 .top_area{margin:0 1px 1px;border:1px solid #DDD;border-radius:5px;box-shadow:0 1px 1px #AAA}
 .rd_hd .xe_v3 .btm_area{margin:0 3px;background:#F9F9F9}
@@ -663,6 +663,11 @@
 .ribbon_v2 .ribbon:before{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:-webkit-gradient(linear,0% 0%,0% 100%,from(rgba(255,255,255,.2)),to(rgba(0,0,0,.01)));background:linear-gradient(to bottom,rgba(255,255,255,.2) 0%,rgba(0,0,0,.01) 100%);box-shadow:inset 0 0 1px rgba(255,255,255,.4)}
 .ribbon_v2 .ribbon i{padding:4px 6px}
 
+.bd_tmb_lst .tmb_wrp {transition: ease .2s;}
+.bd_tmb_lst li:hover .tmb_wrp {transform: scale(1.1);}
+.bd_tmb_lst p {transition: ease .2s;}
+.bd_tmb_lst li:hover p {color: #1f1f1f;}
+
 /* Normal */
 .bd_tb_lst{margin-top:25px}
 .bd_tb_lst th,.bd_tb_lst td{padding:8px 12px;font-size:14px;text-align:center;white-space:nowrap}
@@ -681,7 +686,7 @@
 .bd_tb_lst .cate span,.bd_tb_lst .author span,.bd_tb_lst .last_post small{display:block;overflow:hidden;max-width:130px;text-overflow:ellipsis;word-wrap:normal\9}
 .bd_tb_lst .author img{max-width:none}
 .bd_tb_lst .last_post{line-height:12px}
-.bd_tb_lst .extraimages{margin-left:2px;white-space:nowrap}
+.bd_tb_lst .extraimages{margin-left:2px;white-space:nowrap; filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.25))}
 
 /* 벡터 아이콘 */
 /* 파일 */
@@ -1026,8 +1031,8 @@ body.viewer_blk{background:#222}
 .rd_hd .board .top_area{margin:0;padding:20px 12px;border-width:1px 0 0;border-radius:0;box-shadow:none;background:none}
 .rd_hd .board .top_area .cate{display:block;float:none;padding:0 2px 6px}
 .rd_hd .board h1{overflow:visible;padding:0;font-size:20px;line-height:1.2;white-space:normal}
-.rd_hd .board .btm_area{margin:-12px 12px 0;padding:0 0 18px;background:none}
-.rd_hd .board .side{float:none;padding:0}
+.rd_hd .board .btm_area{margin:4px 4px 0;padding:0 0 18px;background:none}
+.rd_hd .board .side{float:none;padding:0; margin-top: 4px}
 .rd_hd .board .side>*{padding:0 8px 0 2px}
 .rd_body{margin:0 12px 24px}
 .rd_sign{padding:4%}
@@ -1050,7 +1055,8 @@ body.viewer_blk{background:#222}
 .simple_wrt{position:static;margin:0}
 .simple_wrt textarea{font-size:14px}
 .cmt_wrt .simple_wrt textarea{min-height:96px !important}
-.simple_wrt .bd_btn{position:absolute;top:100%;right:-1px;width:100%;height:34px;margin-top:12px;font-weight:700;line-height:32px}
+.simple_wrt .bd_btn{position:absolute;top:90%;right:-1px;width:100%;height:34px;margin-top:12px;font-weight:700;line-height:32px}
+.simple_wrt .bd_btn[value="❤️+등록"] {margin-top: 45px !important}
 .edit_opt{display:block !important}
 .bd_wrt_main .itx_wrp{display:block}
 .bd_wrt_main .itx{width:100%;margin:0 0 8px}
