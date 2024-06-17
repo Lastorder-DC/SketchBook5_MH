@@ -17,7 +17,7 @@
 					<th scope="col" cond="$val->type=='no' && $val->idx==-1" class="no"><span><a href="{getUrl('order_type',$order_type)}" title="<!--@if($order_type=="desc")-->{$lang->order_desc}<!--@else-->{$lang->order_asc}<!--@end-->">{$lang->no}</a></span></th>
 					<block cond="$val->type=='title' && $val->idx==-1">
 						<th scope="col" cond="$timeline_info && $mi->timeline_bview==''"><span>{$lang->board}</span></th>
-						<th scope="col" cond="!$timeline_info && $module_info->include_modules"><span>{$lang->board}</span></th>
+						<th scope="col" cond="!$timeline_info && $module_info->include_modules && $mi->timeline_bview==''"><span>{$lang->board}</span></th>
 						<th scope="col" cond="!$mi->show_cate && $mi->use_category=='Y'" class="m_no"><span>{$lang->category}</span></th>
 						<th scope="col" class="title <!--@if($mi->sticky_select == 't')-->t_fixed<!--@end-->"><span><a href="{getUrl('sort_index','title','order_type',$order_type)}"><!--@if(!$mi->link_board)-->{$lang->title}<!--@else-->{$lang->link_site}<!--@end--><i cond="$sort_index=='title'" class="arrow {$order_icon}"></i></a></span></th>
 					</block>
