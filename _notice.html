@@ -2,7 +2,7 @@
 	<tr loop="$notice_list=>$no,$document" class="notice<!--@if($document->get('hot_document'))--> hot<!--@end-->">
 		<td cond="$list_config['voted_count']"><!--@if($document->get('hot_document'))-->인기<!--@else-->{$document->get('voted_count')>0?$document->get('voted_count'):'0'}<!--@end--></td>
 		<td cond="$category_list">{$category_list[$document->get('category_srl')]->title}</td>
-		<td cond="!$timeline_info && $module_info->include_modules"><a href="{$document->get('mid')}"><strong>{$document->get('module_title')}</strong></a></td>
+		<td cond="!$timeline_info && $module_info->include_modules && $mi->timeline_bview==''"><a href="{$document->get('mid')}"><strong>{$document->get('module_title')}</strong></a></td>
 		<td class="title">
 			<!--// 공지사항 일반 출력 -->
 			<a cond="$mi->notice_view_slide ==''" href="{getUrl('document_srl',$document->document_srl, 'listStyle', $listStyle, 'cpage','')}">
